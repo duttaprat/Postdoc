@@ -178,10 +178,8 @@ for transcript, entries in df_by_transcript:
                 #print("TSS", entry['start'])
                 promoter_sequence(entry, df_promoter, promoter_index)
                 promoter_index= promoter_index+1
-                
                 core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
                 core_promoter_index = core_promoter_index +1
-                
                 donor_sequence(entry, df_donor_splice, donor_index)
                 donor_index =donor_index+ 1
                 #print("first donor_splice_site", entry['end'])

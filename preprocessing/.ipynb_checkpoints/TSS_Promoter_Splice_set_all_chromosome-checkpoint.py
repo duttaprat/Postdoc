@@ -116,13 +116,17 @@ def core_promoter_sequence(entry, df_core_promoter, core_promoter_index):
 
 
 
-
+promoter_coordinates = [-249, 50]
+core_promoter_coordinates= [-34, 35]
+donor_coordinates= [-199, 200]
+acceptor_coordinates= [-199, 200]
 
 global df_promoter, df_core_promoter, df_donor_splice, df_acceptor_splice
 
 
 for file in chr_files:
     if file.endswith('.fa'):
+        print ("File name:", file)
         reference_genome_file_path = reference_genome_path + file
         chr_name = file.split('.')[0]
         print (chr_name)
@@ -148,37 +152,30 @@ for file in chr_files:
         
         
         
-        df_by_transcript = df_new.head(20).groupby("transcript_id")
+        df_by_transcript = df_new.groupby("transcript_id")
         for transcript, entries in df_by_transcript:
             print ("\n", transcript,len( entries) )
             print (entries.iloc[0]['strand'])
             if (entries.iloc[0]['strand']=='+'):
                 for index, entry in entries.iterrows():
                     if (int(entry['exon_number'])==1):
-                        print("TSS", entry['start'])
                         promoter_sequence(entry, df_promoter, promoter_index)
                         promoter_index= promoter_index+1
                         core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
                         core_promoter_index = core_promoter_index +1
                         donor_sequence(entry, df_donor_splice, donor_index)
                         donor_index =donor_index+ 1
-                        print("first donor_splice_site", entry['end'])
                     elif (int(entry['exon_number'])==len(entries)):
-                        print ("Last acceptor_splice_site",  entry['start'])
                         acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
                         acceptor_index = acceptor_index +1
                     else:
-                        print ("Acceptor splice site", entry['start'])
                         acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
                         acceptor_index = acceptor_index +1
-                        print ("Donor splice site", entry['end'])
                         donor_sequence(entry, df_donor_splice, donor_index)
                         donor_index =donor_index+ 1
             elif (entries.iloc[0]['strand']=='-'):
                 for index, entry in entries.iterrows():
                     if (int(entry['exon_number'])==1):
-                        print("TSS", entry['end'])
-                        print("first donor_splice_site", entry['start'])
                         promoter_sequence(entry, df_promoter, promoter_index)
                         promoter_index= promoter_index+1
                         core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
@@ -186,14 +183,11 @@ for file in chr_files:
                         donor_sequence(entry, df_donor_splice, donor_index)
                         donor_index =donor_index+ 1
                     elif (int(entry['exon_number'])==len(entries)):
-                        print ("Last acceptor_splice_site",  entry['end'])
                         acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
                         acceptor_index = acceptor_index +1
                     else:
-                        print ("Acceptor splice site", entry['end'])
                         acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
                         acceptor_index = acceptor_index +1
-                        print ("Donor splice site", entry['start'])
                         donor_sequence(entry, df_donor_splice, donor_index)
                         donor_index =donor_index+ 1
         df_promoter.to_csv(folder_name +"/"+ entry['seqname']+"_promoter.csv", index=False)
