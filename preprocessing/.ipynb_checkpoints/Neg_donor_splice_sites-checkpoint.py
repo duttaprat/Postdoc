@@ -121,7 +121,7 @@ print(df_donor.shape)
 
 
 for index, row in df_donor.iterrows():
-    if (index%5==0):
+    if (index%500==0):
         print (index)
     start = row['coordinates'] -35
     end = row['coordinates'] + 34

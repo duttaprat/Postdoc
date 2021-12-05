@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import os, tarfile
 import re
 import multiprocessing
@@ -7,18 +13,17 @@ import pybedtools
 import zipfile, gzip
 from gtfparse import read_gtf
 import pandas as pd
-#pd.set_option('display.max_columns', None)
+pd.set_option('display.max_columns', None)
 from Bio.Seq import Seq
-import sys
 
 
-# In[2]:
+# In[4]:
 
 
 reference_genome_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/genome_by_sequence/"
 data_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/gencode_annotation/"
-donor_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/Donor_splice_sites/"
-non_donor_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/Non_donor_splice_sites/"
+core_promoter_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/Core_promoter_regions/"
+non_core_promoter_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/Non_core_promoter_regions/"
 file_name="gencodeV38.bb"
 gencode_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/gencode_annotation/"
 gtf_annotation_filename= "gencode.v38.annotation.gtf"
@@ -30,27 +35,13 @@ gencode_gff_file_path= gencode_path + gff_annotation_filename
 data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/region_wise_sequence/"
 
 
+# In[5]:
+
+
 bb= pyBigWig.open(file_path)
-print("BigBed file uploaded...")
-
-
-df = read_gtf(gencode_gtf_file_path)
-
-print("Gencode annotation file uploaded....")
-
-
-print(df.columns)
-print(df.shape)
-
 
 
 # In[6]:
-
-
-df.head()
-
-
-# In[8]:
 
 
 promoter_coordinates = [-249, 50]
@@ -59,7 +50,7 @@ donor_coordinates= [-199, 200]
 acceptor_coordinates= [-199, 200]
 
 
-# In[13]:
+# In[7]:
 
 
 def remove_data(elements, distance):
@@ -72,87 +63,95 @@ def remove_data(elements, distance):
     return new_elements
 
 
-# In[14]:
-
-
-def string_subs(row, temp_seq):
-    start = row['coordinates'] -35
-    end = row['coordinates'] + 34
-    #print (start, end)
-    sub_string = temp_seq[start:end]
-    #print(sub_string)
-    temp_seq = temp_seq.replace(sub_string, 70*'$')
-    return temp_seq
-
-
-# In[9]:
+# In[ ]:
 
 
 
 
 
-# In[18]:
+# In[ ]:
 
 
-#chr_file= "chr2.fa"
-chr_file = sys.argv[1]
 
-print (chr_file)
+
+
+# In[11]:
+
+
+chr_file= "chr1.fa"
 reference_genome_file_path = reference_genome_path + chr_file
 chr_name = chr_file.split('.')[0]
 print (chr_name)
-df_chr= df[df['seqname']==chr_name]
-df_new = df_chr[df_chr['feature']=='exon'].reset_index(drop=True)
-print (df_new.shape)
-#print (reference_genome_file_path)
+# df_chr= df[df['seqname']==chr_name]
+# df_new = df_chr[df_chr['feature']=='exon'].reset_index(drop=True)
+# print (df_new.shape)
+# #print (reference_genome_file_path)
 length= bb.chroms(chr_name)
 print (length)
 fasta = pybedtools.example_filename(reference_genome_file_path)
 temp_seq= pybedtools.BedTool.seq(chr_name+':1-'+str(length), fasta)
 print ("length:", len(temp_seq))
 
-pattern_donor= ['GT', 'gt']
-
-df_donor = pd.read_csv(donor_path+chr_name+"_donor_splice_set.csv")
 
 
-print(df_donor.shape)
+df_core_promoter = pd.read_csv(core_promoter_path+chr_name+"_core_promoter_sequence.csv")
+
+#print (df_core_promoter.head())
+
+print(df_core_promoter.shape)
 
 
 
-for index, row in df_donor.iterrows():
+for index, row in df_core_promoter.loc[0:10].iterrows():
     if (index%5==0):
         print (index)
-    start = row['coordinates'] -35
-    end = row['coordinates'] + 34
+
+    start = row['TSS'] -34
+    end = row['TSS'] + 35
+    
     #print (start, end)
     sub_string = temp_seq[start:end]
-    #print(sub_string)
     temp_seq = temp_seq.replace(sub_string, 70*'$')
 
 
-Non_donor_sequence = re.sub('[$]', '', temp_seq)
-print ("@@##$$", len(Non_donor_sequence))
-non_donor_indices = []
-for j in pattern_donor:
-    non_donor_indices.append([match.start() for match in re.finditer(j, Non_donor_sequence)])
+Non_promoter_sequence = re.sub('[$]', '', temp_seq)
+print ("@@##$$", len(Non_promoter_sequence))
 
-print (len(non_donor_indices[0]))
-flat_list = [item for sublist in non_donor_indices for item in sublist]
-print ("test")
-flat_list.sort()
-print ("test1")
-print ("@#@",len(flat_list))
-removed_flat_list = remove_data(flat_list, 70)
-print ("$$$", len(removed_flat_list))
-print (removed_flat_list)
+    
+list_non_promoter = [Non_promoter_sequence[i:i+70] for i in range(0, len(Non_promoter_sequence), 70)]
+pd_df = pd.DataFrame(list_non_promoter)
 
-list_non_donor = []
-for i in removed_flat_list:
-    temps =  Non_donor_sequence[i-35:i+34]
-    list_non_donor.append(temps)
-pd_df = pd.DataFrame(list_non_donor)
+
+
 print (pd_df)
-pd_df.to_csv(non_donor_path+chr_name+"_non_donor.csv")
+
+
+print(pd_df.shape)
+#pd_df.to_csv(non_acceptor_path+"/"+chr_name+"_non_acceptor.csv")
+
+
+# In[12]:
+
+
+pd_core_promoter = pd_df.drop_duplicates().reset_index(drop=True)
+pd_core_promoter
+
+
+# In[17]:
+
+
+fasta="DVNLDKNBBSDLVJB"
+chunk_size= 3
+
+
+# In[18]:
+
+
+c
+
+
+# In[ ]:
+
+
 
 
