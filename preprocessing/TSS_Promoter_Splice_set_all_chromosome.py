@@ -18,15 +18,21 @@ file_path= data_path+file_name
 gencode_gtf_file_path= gencode_path+ gtf_annotation_filename
 gencode_gff_file_path= gencode_path+ gff_annotation_filename
 #reference_genome_file_path = reference_genome_path + reference_genome_name
-data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/region_wise_sequence/"
+data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/region_wise_sequence_new/"
 
 
 chr_files= os.listdir(reference_genome_path)
-df = read_gtf(gencode_gtf_file_path)
+df_gtf = read_gtf(gencode_gtf_file_path)
 
 
-print(df.columns)
-print(df.shape)
+print(df_gtf.columns)
+print(df_gtf.shape)
+
+
+df = pd.read_csv(data_save_path+"gtf_annotation.csv")
+
+print (df.columns, df.shape)
+
 
 
 def acceptor_sequence(entry, df_acceptor_splice, acceptor_index):
