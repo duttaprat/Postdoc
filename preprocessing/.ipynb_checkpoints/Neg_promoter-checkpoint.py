@@ -16,8 +16,8 @@ import sys
 
 reference_genome_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/genome_by_sequence/"
 data_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/gencode_annotation/"
-promoter_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/Promoter_regions/"
-non_promoter_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/Non_promoter_regions/"
+promoter_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_1100bp/Promoters/"
+non_promoter_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_1100bp/Non_promoters/"
 file_name="gencodeV38.bb"
 gencode_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/gencode_annotation/"
 gtf_annotation_filename= "gencode.v38.annotation.gtf"
@@ -35,7 +35,7 @@ bb= pyBigWig.open(file_path)
 
 
 
-promoter_coordinates = [-249, 50]
+promoter_coordinates = [-1000, 100]
 core_promoter_coordinates= [-34, 35]
 donor_coordinates= [-199, 200]
 acceptor_coordinates= [-199, 200]
@@ -85,7 +85,7 @@ print ("length:", len(temp_seq))
 
 
 
-df_promoter = pd.read_csv(promoter_path+chr_name+"_promoter.csv")
+df_promoter = pd.read_csv(promoter_path+chr_name+"/"+chr_name+"_promoter.csv")
 
 print (df_promoter.head())
 
@@ -93,31 +93,31 @@ print(df_promoter.shape)
 
 
 
-for index, row in df_promoter.loc[0:10].iterrows():
+for index, row in df_promoter.iterrows():
     if (index%5==0):
         print (index)
     if(row['strand']=='+'):
-        start = row['TSS'] -249
-        end = row['TSS'] + 50
+        start = row['TSS'] -1000
+        end = row['TSS'] + 100
     else:
-        start = row['TSS'] -50
-        end = row['TSS'] + 249
+        start = row['TSS'] -100
+        end = row['TSS'] + 1000
     
     #print (start, end)
     sub_string = temp_seq[start:end]
-    temp_seq = temp_seq.replace(sub_string, 300*'$')
+    temp_seq = temp_seq.replace(sub_string, 1101*'$')
 
 
 Non_promoter_sequence = re.sub('[$]', '', temp_seq)
 print ("@@##$$", len(Non_promoter_sequence))
 
     
-list_non_promoter = [Non_promoter_sequence[i:i+300] for i in range(0, len(Non_promoter_sequence), 300)]
+list_non_promoter = [Non_promoter_sequence[i:i+1101] for i in range(0, len(Non_promoter_sequence), 1101)]
 pd_df = pd.DataFrame(list_non_promoter)
 
 
 
-print (pd_df)
+print (pd_df.head(45))
 
 
 print(pd_df.shape)
@@ -128,6 +128,7 @@ print(pd_df.shape)
 
 
 pd_promoter = pd_df.drop_duplicates().reset_index(drop=True)
+print(pd_promoter.shape)
 pd_promoter.to_csv(non_promoter_path+"/"+chr_name+"_non_promoter.csv")
 
 
