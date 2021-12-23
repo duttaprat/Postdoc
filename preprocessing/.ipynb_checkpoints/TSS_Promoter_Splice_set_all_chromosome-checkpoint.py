@@ -9,7 +9,7 @@ from Bio.Seq import Seq
 
 
 reference_genome_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/genome_by_sequence/"
-data_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/gencode_annotation/"
+data_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/UCSC/gencchode_annotation/"
 file_name="gencodeV38.bb"
 gencode_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/gencode_annotation/"
 gtf_annotation_filename= "gencode.v38.annotation.gtf"
@@ -18,7 +18,7 @@ file_path= data_path+file_name
 gencode_gtf_file_path= gencode_path+ gtf_annotation_filename
 gencode_gff_file_path= gencode_path+ gff_annotation_filename
 #reference_genome_file_path = reference_genome_path + reference_genome_name
-data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/region_wise_sequence_new/"
+data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_1100bp/"
 
 
 chr_files= os.listdir(reference_genome_path)
@@ -29,11 +29,11 @@ print(df_gtf.columns)
 print(df_gtf.shape)
 
 
-df = pd.read_csv(data_save_path+"gtf_annotation.csv")
+df = pd.read_csv(data_save_path+"1100bp_promoter_gtf_annotation.csv")
 
 print (df.columns, df.shape)
 
-
+exit()
 
 def acceptor_sequence(entry, df_acceptor_splice, acceptor_index):
     print ("@@@@", acceptor_index)
@@ -150,9 +150,9 @@ for file in chr_files:
         
         
         df_promoter = pd.DataFrame(columns= ['gene_id','transcript_id','strand','exon_id','transcript_type','TSS', 'sequence'])
-        df_core_promoter = pd.DataFrame(columns= ['gene_id','transcript_id','strand','exon_id','transcript_type','TSS','sequence'])
-        df_donor_splice = pd.DataFrame(columns= ['transcript_id','exon_id','transcript_type','strand','coordinates','sequence'])
-        df_acceptor_splice= pd.DataFrame(columns= ['transcript_id','exon_id', 'transcript_type','strand','coordinates', 'sequence'])
+        #df_core_promoter = pd.DataFrame(columns= ['gene_id','transcript_id','strand','exon_id','transcript_type','TSS','sequence'])
+        #df_donor_splice = pd.DataFrame(columns= ['transcript_id','exon_id','transcript_type','strand','coordinates','sequence'])
+        #df_acceptor_splice= pd.DataFrame(columns= ['transcript_id','exon_id', 'transcript_type','strand','coordinates', 'sequence'])
         promoter_index = core_promoter_index = donor_index = acceptor_index = 0
         
         

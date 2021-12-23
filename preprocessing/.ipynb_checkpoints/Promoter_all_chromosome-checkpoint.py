@@ -18,7 +18,7 @@ file_path= data_path+file_name
 gencode_gtf_file_path= gencode_path+ gtf_annotation_filename
 gencode_gff_file_path= gencode_path+ gff_annotation_filename
 #reference_genome_file_path = reference_genome_path + reference_genome_name
-data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_1100bp/"
+data_save_path= "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_550bp/"
 
 
 chr_files= os.listdir(reference_genome_path)
@@ -29,11 +29,11 @@ print(df_gtf.columns)
 print(df_gtf.shape)
 
 
-df = pd.read_csv(data_save_path+"1100bp_promoter_gtf_annotation.csv")
+df = pd.read_csv(data_save_path+"550bp_promoter_gtf_annotation.csv")
 
 print (df.columns, df.shape)
 
-exit()
+
 
 def acceptor_sequence(entry, df_acceptor_splice, acceptor_index):
     print ("@@@@", acceptor_index)
@@ -122,10 +122,8 @@ def core_promoter_sequence(entry, df_core_promoter, core_promoter_index):
 
 
 
-promoter_coordinates = [-249, 50]
-core_promoter_coordinates= [-34, 35]
-donor_coordinates= [-199, 200]
-acceptor_coordinates= [-199, 200]
+promoter_coordinates = [-500, 50]
+
 
 global df_promoter, df_core_promoter, df_donor_splice, df_acceptor_splice
 
@@ -167,36 +165,25 @@ for file in chr_files:
                     if (int(entry['exon_number'])==1):
                         promoter_sequence(entry, df_promoter, promoter_index)
                         promoter_index= promoter_index+1
-                        core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
-                        core_promoter_index = core_promoter_index +1
-                        donor_sequence(entry, df_donor_splice, donor_index)
-                        donor_index =donor_index+ 1
+                        #core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
+                        #core_promoter_index = core_promoter_index +1
+                        #donor_sequence(entry, df_donor_splice, donor_index)
+                        #donor_index =donor_index+ 1
                     elif (int(entry['exon_number'])==len(entries)):
-                        acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
-                        acceptor_index = acceptor_index +1
-                    else:
-                        acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
-                        acceptor_index = acceptor_index +1
-                        donor_sequence(entry, df_donor_splice, donor_index)
-                        donor_index =donor_index+ 1
+                        print("")
+                        #acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
+                        #acceptor_index = acceptor_index +1
             elif (entries.iloc[0]['strand']=='-'):
                 for index, entry in entries.iterrows():
                     if (int(entry['exon_number'])==1):
                         promoter_sequence(entry, df_promoter, promoter_index)
                         promoter_index= promoter_index+1
-                        core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
-                        core_promoter_index = core_promoter_index +1
-                        donor_sequence(entry, df_donor_splice, donor_index)
-                        donor_index =donor_index+ 1
+                        #core_promoter_sequence(entry, df_core_promoter, core_promoter_index)
+                        #core_promoter_index = core_promoter_index +1
+                        #donor_sequence(entry, df_donor_splice, donor_index)
+                        #donor_index =donor_index+ 1
                     elif (int(entry['exon_number'])==len(entries)):
-                        acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
-                        acceptor_index = acceptor_index +1
-                    else:
-                        acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
-                        acceptor_index = acceptor_index +1
-                        donor_sequence(entry, df_donor_splice, donor_index)
-                        donor_index =donor_index+ 1
+                        print("")
+                        #acceptor_sequence(entry, df_acceptor_splice, acceptor_index)
+                        #acceptor_index = acceptor_index +1
         df_promoter.to_csv(folder_name +"/"+ entry['seqname']+"_promoter.csv", index=False)
-        df_core_promoter.to_csv(folder_name +"/"+ entry['seqname']+"_core_promoter_sequence.csv", index=False)
-        df_acceptor_splice.to_csv(folder_name +"/"+ entry['seqname']+"_acceptor_splice_set_sequence.csv", index=False)
-        df_donor_splice.to_csv(folder_name +"/"+ entry['seqname']+"_donor_splice_set.csv", index=False) 
