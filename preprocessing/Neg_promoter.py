@@ -35,7 +35,7 @@ bb= pyBigWig.open(file_path)
 
 
 
-promoter_coordinates = [-1000, 100]
+promoter_coordinates = [-200, 1800]
 core_promoter_coordinates= [-34, 35]
 donor_coordinates= [-199, 200]
 acceptor_coordinates= [-199, 200]
