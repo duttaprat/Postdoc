@@ -1,6 +1,3 @@
-
-
-
 import os, tarfile
 import re
 import pandas as pd
@@ -12,9 +9,9 @@ from sklearn.model_selection import train_test_split
 
 
 
-promoter_data_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_1100bp/Promoters/"
-non_promoter_data_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_1100bp/Non_promoters/"
-data_path= "/mnt/data05/shared/pdutta_data/DNABERT_data/Promoter_prediction/1100BP_promoter_prediction_data/5:1/"
+promoter_data_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_2000bp/Promoters/"
+non_promoter_data_path = "/mnt/data05/shared/pdutta_data/Human_Genome_Data/chromosome_wise_sequence_2000bp/Non_promoters/"
+data_path= "/mnt/data05/shared/pdutta_data/DNABERT_data/Promoter_prediction/2000BP_promoter_prediction_data/1:1/"
 
 
 
@@ -52,10 +49,17 @@ def create_csv(path):
     file_names = os.listdir(path)
     for i in file_names:
         print (i)
-    combined_csv_data = pd.concat([pd.read_csv(str(path)+str(f)) for f in file_names])
-    combined_csv_data.drop_duplicates().reset_index(drop=True)
-    print (combined_csv_data.shape)
-    return combined_csv_data
+    li = []
+    for filename in file_names:
+        df = pd.read_csv(path+filename, index_col=None, header=0)
+        li.append(df)
+    frame = pd.concat(li, axis=0, ignore_index=True)
+    print ("New", frame.shape)
+    return frame
+
+
+
+
 
 
 # In[7]:
@@ -65,15 +69,9 @@ promoter_csv = create_csv(promoter_data_path)
 non_promoter_csv = create_csv(non_promoter_data_path)
 
 
-# In[8]:
 
 
 
-
-
-
-
-# In[13]:
 
 
 promoter_sequence = promoter_csv[['sequence']]
@@ -98,43 +96,23 @@ non_promoter_sequence['sequence'] = non_promoter_sequence['sequence'].str.upper(
 print (promoter_sequence.head())
 print (non_promoter_sequence.head())
 
+
+
 print (promoter_sequence.shape, non_promoter_sequence.shape)
 
 
-# In[16]:
-
-
-
-
-
-# In[31]:
-
-
-# non_promoter_sequence_frac = non_promoter_sequence.sample(frac=0.060)
-# non_promoter_sequence_frac_rest = non_promoter_sequence.loc[~non_promoter_sequence.index.isin(non_promoter_sequence_frac.index)]
-# #df_rest = df.loc[df.index.difference(df_0_7.index)]
-# #non_promoter_sequence_frac_rest= non_promoter_sequence.loc[non_promoter_sequence.index.difference(non_promoter_sequence_frac.index)]
-# #non_promoter_sequence_frac = non_promoter_sequence_frac.reset_index(drop=True)
-# #non_promoter_sequence_frac_rest = non_promoter_sequence_frac_rest.reset_index(drop=True)
-# print (non_promoter_sequence_frac.shape, non_promoter_sequence_frac_rest.shape)
-
-# # df_percent = df.sample(frac=0.7)
-# # df_rest = df.loc[df.index.difference(df_0_7.index)]
-# # df_rest = df.loc[~df.index.isin(df_percent.index)]
-
-
-# In[30]:
-
-
-non_promoter_rest, non_promoter_data = train_test_split(non_promoter_sequence, test_size=0.13)
+non_promoter_rest, non_promoter_data = train_test_split(non_promoter_sequence, test_size=0.046)
 non_promoter_rest.reset_index(drop=True, inplace=True)
 non_promoter_data.reset_index(drop=True, inplace=True)
 print (non_promoter_rest.shape , non_promoter_data.shape)
 
 
+print("Promoter and Non-promoter sizes", promoter_sequence.shape, non_promoter_data.shape)
 # In[32]:
 
 
+
+print (len(promoter_sequence['sequence'].loc[1]), len(non_promoter_data['sequence'].loc[1]))
 non_promoter_rest.head()
 
 
@@ -154,10 +132,7 @@ test.reset_index(drop=True, inplace=True)
 
 print (train.shape, test.shape)
 
-
 # In[35]:
-
-
 
 
 
@@ -169,7 +144,7 @@ df2kmer(train, "train.tsv")
 # In[ ]:
 
 
-df2kmer(non_promoter_rest, "non_promoter_rest.tsv")
+#df2kmer(non_promoter_rest, "non_promoter_rest.tsv")
 
 
 # In[ ]:
