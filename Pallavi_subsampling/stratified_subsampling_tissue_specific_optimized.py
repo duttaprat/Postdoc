@@ -6,7 +6,7 @@ import time
 import os
 
 
-tissue_name = "Liver"
+tissue_name = "Kidney"
 no_of_iteration = 500
 sample_size = 0.8
 file_path = "/data/projects/shared_data/tissue_specific_data/subsample/all_input.feather"
@@ -28,12 +28,14 @@ print(df.groupby([tissue_name]).size())
 groups_name = list(df.groupby([tissue_name]).groups.keys())
 print(groups_name)
 
+df_p_values = pd.DataFrame()
+df_p_values['Transcript_ID'] = df.columns[31:]
 
 
-def stratified_sample(df, strata, size=None, seed=None, keep_index= True):
+def stratified_sample(df, iter, strata, size=None,  seed=None, keep_index= True):
     population = len(df)
     #print(population, size)
-    size = __smpl_size(population, size)
+    size= np.round(population * size)
     tmp = df.loc[:,strata]
     tmp['size'] = 1
     tmp_grpd = tmp.groupby(strata).count().reset_index()
@@ -65,8 +67,15 @@ def stratified_sample(df, strata, size=None, seed=None, keep_index= True):
         else:
             tmp_df = df.query(qry).sample(n=n, random_state=seed).reset_index(drop=(not keep_index))
             stratified_df = stratified_df.append(tmp_df, ignore_index=True)
-    
-    return stratified_df
+    #print(stratified_df.head(), tissue_name, groups_name)
+    cat1_df = stratified_df[stratified_df[tissue_name]==groups_name[0]]
+    cat2_df = stratified_df[stratified_df[tissue_name]==groups_name[1]]
+    print(iter)
+    for index, row in df_p_values.iterrows():
+        #print(row['Transcript_ID'])
+        t, p = ttest_ind(cat1_df[row['Transcript_ID']], cat2_df[row['Transcript_ID']], equal_var=False)
+        df_p_values.loc[index, ['ITER_{}'.format(iter)]]= p
+    return None
 
 def __smpl_size(population, size):
     '''
@@ -100,37 +109,13 @@ def __smpl_size(population, size):
 
 
 start_time = time.time()
-temp_list = []
 for i in range(no_of_iteration):
-    temp_stratified = stratified_sample(df=df, strata=[tissue_name], size=sample_size)
-    temp_list.append(temp_stratified)
+    stratified_sample(df=df, iter =i, strata=[tissue_name], size=sample_size)
 print("--- %s seconds ---" % (time.time() - start_time))
 
-
-
-print(temp_list[0].dtypes)
-
-
-
-df_p_values = pd.DataFrame()
-df_p_values['Transcript_ID'] = df.columns[31:]
-iteration =0
-start_time = time.time()
-for df_temp in temp_list:
-    iteration +=1
-    if (iteration% 25) ==0:
-        print(iteration)
-    #print(df_temp.groupby(['lung_tissue']).size())                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-    cat1 = df_temp[df_temp[tissue_name]==groups_name[0]]
-    cat2 = df_temp[df_temp[tissue_name]==groups_name[1]]
-    for index, row in df_p_values.iterrows():
-        tuple_values = ttest_ind(cat1[row['Transcript_ID']], cat2[row['Transcript_ID']])
-        df_p_values.loc[index, ['ITER_{}'.format(iteration)]]= tuple_values[1]
-        index+=1
-print("--- %s seconds ---" % (time.time() - start_time))
 
 df_p_values.set_index('Transcript_ID', inplace=True)
-print (df_p_values.head())
+print (df_p_values)
 
 df_p_values.to_csv(OUTPUT_PATH +"/"+OUTPUT_FILE_NAME_ITERATION, sep=",")
 start_time = time.time()
