@@ -6,7 +6,7 @@ import time
 import os
 
 
-tissue_name = "Kidney"
+tissue_name = "Testis"
 no_of_iteration = 500
 sample_size = 0.8
 file_path = "/data/projects/shared_data/tissue_specific_data/subsample/all_input.feather"
