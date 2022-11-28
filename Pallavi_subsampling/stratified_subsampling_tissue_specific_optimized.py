@@ -1,4 +1,4 @@
-
+import sys
 import pandas as pd
 import numpy as np
 from scipy.stats import ttest_ind
@@ -6,11 +6,12 @@ import time
 import os
 
 
-tissue_name = "Testis"
+tissue_name = sys.argv[1]
+print(tissue_name)
 no_of_iteration = 500
-sample_size = 0.8
-file_path = "/data/projects/shared_data/tissue_specific_data/subsample/all_input.feather"
-OUTPUT_PATH = "/data/projects/shared_data/tissue_specific_data/subsample/results/"+tissue_name
+sample_size = 0.7
+file_path = "/data/projects/Tissue_specific_data/subsample/Data/all_input.feather"
+OUTPUT_PATH = "/data/projects/Tissue_specific_data/subsample/results/"+tissue_name
 OUTPUT_FILE_NAME_ITERATION = tissue_name+"_"+ str(no_of_iteration)+"_"+str(sample_size)+"_iteration_p.csv"
 OUTPUT_FILE_NAME_EMPIRICAL = tissue_name+"_"+ str(no_of_iteration)+"_"+str(sample_size)+"_empirical_p.csv"
 
