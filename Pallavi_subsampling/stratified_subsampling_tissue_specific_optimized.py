@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
 import numpy as np
-from scipy.stats import ttest_ind
+from scipy.stats import ttest_ind, wilcoxon
 import time
 import os
 
@@ -31,7 +31,7 @@ print(groups_name)
 
 df_p_values = pd.DataFrame()
 df_p_values['Transcript_ID'] = df.columns[31:]
-
+print(df_p_values)
 
 def stratified_sample(df, iter, strata, size=None,  seed=None, keep_index= True):
     population = len(df)
@@ -73,8 +73,12 @@ def stratified_sample(df, iter, strata, size=None,  seed=None, keep_index= True)
     cat2_df = stratified_df[stratified_df[tissue_name]==groups_name[1]]
     print(iter)
     for index, row in df_p_values.iterrows():
-        #print(row['Transcript_ID'])
-        t, p = ttest_ind(cat1_df[row['Transcript_ID']], cat2_df[row['Transcript_ID']], equal_var=False)
+        print(row['Transcript_ID'])
+        t, pt1 = ttest_ind(cat1_df[row['Transcript_ID']], cat2_df[row['Transcript_ID']], equal_var=False) ## One-tailed t-test
+        t, pt2 = ttest_ind(cat1_df[row['Transcript_ID']], cat2_df[row['Transcript_ID']], equal_var=True) ## Two-tailed t-test
+        t, pw2 = wilcoxon(cat1_df[row['Transcript_ID']], cat2_df[row['Transcript_ID']]) ## Two-tailed Wilcox test
+        print(pt1, pt2, pw2)
+        exit()
         df_p_values.loc[index, ['ITER_{}'.format(iter)]]= p
     return None
 

@@ -1,0 +1,2428 @@
+Brain
+(17382, 163725)
+Index(['ENST00000373020.8', 'ENST00000494424.1', 'ENST00000496771.5',
+       'ENST00000612152.4', 'ENST00000614008.4', 'ENST00000373031.4',
+       'ENST00000485971.1', 'ENST00000371582.8', 'ENST00000371584.8',
+       'ENST00000371588.9',
+       ...
+       'ENST00000640157.1', 'ENST00000640623.1', 'ENST00000640630.1',
+       'ENST00000638486.1', 'ENST00000381568.9', 'ENST00000622217.1',
+       'ENST00000408734.1', 'ENST00000385204.1', 'ENST00000583027.1',
+       'ENST00000638236.1'],
+      dtype='object', length=163723)
+163723
+sample_class
+Adipose_Tissue     1204
+Adrenal_Gland       258
+Bladder              21
+Blood               929
+Blood_Vessel       1335
+Brain              2642
+Breast              459
+Cervix_Uteri         19
+Colon               779
+Esophagus          1445
+Fallopian_Tube        9
+Heart               861
+Kidney               89
+Liver               226
+Lung                578
+Muscle              803
+Nerve               619
+Ovary               180
+Pancreas            328
+Pituitary           283
+Prostate            245
+Salivary_Gland      162
+Skin               1809
+Small_Intestine     187
+Spleen              241
+Stomach             359
+Testis              361
+Thyroid             653
+Uterus              142
+Vagina              156
+dtype: int64
+#$@ 0
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 2078.9712812900543 seconds ---
+#$@ 1
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 4157.147664308548 seconds ---
+#$@ 2
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 6239.3288288116455 seconds ---
+#$@ 3
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 8322.305786132812 seconds ---
+#$@ 4
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 10404.034173488617 seconds ---
+#$@ 5
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 12485.393062114716 seconds ---
+#$@ 6
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 14567.417985200882 seconds ---
+#$@ 7
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 16645.303962230682 seconds ---
+#$@ 8
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 18724.944593429565 seconds ---
+#$@ 9
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 20798.055325746536 seconds ---
+#$@ 10
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 22876.762122392654 seconds ---
+#$@ 11
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 24949.741938829422 seconds ---
+#$@ 12
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 27016.777822732925 seconds ---
+#$@ 13
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 29096.90764427185 seconds ---
+#$@ 14
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 31167.476177453995 seconds ---
+#$@ 15
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 33248.75754928589 seconds ---
+#$@ 16
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 35319.20696115494 seconds ---
+#$@ 17
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 37393.320462703705 seconds ---
+#$@ 18
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 39465.38370227814 seconds ---
+#$@ 19
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 41543.084171295166 seconds ---
+#$@ 20
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 43614.81528496742 seconds ---
+#$@ 21
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 45683.893122673035 seconds ---
+#$@ 22
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 47756.93762087822 seconds ---
+#$@ 23
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 49826.833099365234 seconds ---
+#$@ 24
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 51901.527581214905 seconds ---
+#$@ 25
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 53974.37403964996 seconds ---
+#$@ 26
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 56049.22830605507 seconds ---
+#$@ 27
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 58124.684401512146 seconds ---
+#$@ 28
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 60203.17055249214 seconds ---
+#$@ 29
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 62271.8547167778 seconds ---
+#$@ 30
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 64369.659929037094 seconds ---
+#$@ 31
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 66448.59050178528 seconds ---
+#$@ 32
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 68526.23431777954 seconds ---
+#$@ 33
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 70604.27218151093 seconds ---
+#$@ 34
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 72683.32631421089 seconds ---
+#$@ 35
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 74745.89170002937 seconds ---
+#$@ 36
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 76825.868871212 seconds ---
+#$@ 37
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 78904.67429709435 seconds ---
+#$@ 38
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 80982.6320464611 seconds ---
+#$@ 39
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 83057.3662097454 seconds ---
+#$@ 40
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 85134.11208701134 seconds ---
+#$@ 41
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 87202.30399942398 seconds ---
+#$@ 42
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 89281.74894857407 seconds ---
+#$@ 43
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 91349.97103834152 seconds ---
+#$@ 44
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 93432.26724362373 seconds ---
+#$@ 45
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 95508.1376888752 seconds ---
+#$@ 46
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 97583.32043862343 seconds ---
+#$@ 47
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 99656.47894454002 seconds ---
+#$@ 48
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 101726.22263360023 seconds ---
+#$@ 49
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 103797.74910998344 seconds ---
+#$@ 50
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 105886.38151741028 seconds ---
+#$@ 51
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 107955.52809500694 seconds ---
+#$@ 52
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 110035.85816216469 seconds ---
+#$@ 53
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 112152.09688520432 seconds ---
+#$@ 54
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 114219.13253617287 seconds ---
+#$@ 55
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 116291.52541971207 seconds ---
+#$@ 56
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 118387.99563622475 seconds ---
+#$@ 57
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 120466.39663124084 seconds ---
+#$@ 58
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 122537.87041807175 seconds ---
+#$@ 59
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 124609.6413064003 seconds ---
+#$@ 60
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 126678.33476543427 seconds ---
+#$@ 61
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 128758.3766348362 seconds ---
+#$@ 62
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 130831.34395599365 seconds ---
+#$@ 63
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 132905.5984070301 seconds ---
+#$@ 64
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 135002.62768363953 seconds ---
+#$@ 65
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 137075.99465346336 seconds ---
+#$@ 66
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 139191.81526327133 seconds ---
+#$@ 67
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 141265.72934913635 seconds ---
+#$@ 68
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 143347.86245155334 seconds ---
+#$@ 69
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 145416.0182545185 seconds ---
+#$@ 70
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 147495.45172548294 seconds ---
+#$@ 71
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 149578.5414106846 seconds ---
+#$@ 72
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 151639.77617883682 seconds ---
+#$@ 73
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 153719.76121926308 seconds ---
+#$@ 74
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 155784.80870103836 seconds ---
+#$@ 75
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 157858.07767629623 seconds ---
+#$@ 76
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 160050.61181211472 seconds ---
+#$@ 77
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 162148.17337107658 seconds ---
+#$@ 78
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 164218.1111521721 seconds ---
+#$@ 79
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 166318.58150577545 seconds ---
+#$@ 80
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 168390.40436816216 seconds ---
+#$@ 81
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 170466.1275999546 seconds ---
+#$@ 82
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 172543.51462173462 seconds ---
+#$@ 83
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 174627.59968972206 seconds ---
+#$@ 84
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 176740.7192416191 seconds ---
+#$@ 85
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 178821.34790444374 seconds ---
+#$@ 86
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 180907.51499938965 seconds ---
+#$@ 87
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 182993.08641815186 seconds ---
+#$@ 88
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 185074.83282613754 seconds ---
+#$@ 89
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 187161.8470337391 seconds ---
+#$@ 90
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 189262.02800440788 seconds ---
+#$@ 91
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 191340.37031435966 seconds ---
+#$@ 92
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 193412.99583745003 seconds ---
+#$@ 93
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 195482.99731826782 seconds ---
+#$@ 94
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 197558.63278341293 seconds ---
+#$@ 95
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 199638.89698028564 seconds ---
+#$@ 96
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 201708.46578025818 seconds ---
+#$@ 97
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 203787.59186935425 seconds ---
+#$@ 98
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+--- 205850.8354253769 seconds ---
+#$@ 99
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 207933.0540316105 seconds ---
+#$@ 100
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 210068.95766448975 seconds ---
+#$@ 101
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 212141.13346409798 seconds ---
+#$@ 102
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 214209.21377396584 seconds ---
+#$@ 103
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 216283.57291173935 seconds ---
+#$@ 104
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 218357.44607234 seconds ---
+#$@ 105
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 220435.9891591072 seconds ---
+#$@ 106
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 222503.81302189827 seconds ---
+#$@ 107
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 224574.7144753933 seconds ---
+#$@ 108
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
+## 110000
+## 120000
+## 130000
+## 140000
+## 150000
+## 160000
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:76: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_t_test['ITER_{}'.format(i)]= two_tailed_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:77: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1sg_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_greater_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:78: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_1ss_wilcox['ITER_{}'.format(i)]= one_tailed_Wil_smaller_p_value_list
+/home/campus.stonybrook.edu/pdutta/Github/Postdoc/Pallavi_subsampling/stratified_subsampling_optimized_all_test_new.py:79: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_2s_wilcox['ITER_{}'.format(i)]= two_tailed_Wil_p_value_list
+--- 226650.01107931137 seconds ---
+#$@ 109
+Brain
+(1849, 163725) (10316, 163725)
+## 0
+## 10000
+## 20000
+## 30000
+## 40000
+## 50000
+## 60000
+## 70000
+## 80000
+## 90000
+## 100000
