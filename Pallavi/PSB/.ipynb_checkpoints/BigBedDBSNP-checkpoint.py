@@ -2,8 +2,8 @@ import pyBigWig
 import pandas as pd
 
 
-output_path= "/home/pdutta/Data/DBSNP/Chromosome_wise/"
-bw = pyBigWig.open("/home/pdutta/Data/DBSNP/dbSnp155.bb")
+output_path= "/data/projects/VCF_files/DBSNP/ChrWise_Data/"
+bw = pyBigWig.open("/data/projects/VCF_files/DBSNP/dbSnp155.bb")
 
 
 
