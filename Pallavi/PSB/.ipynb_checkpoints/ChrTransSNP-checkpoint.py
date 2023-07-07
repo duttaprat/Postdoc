@@ -78,8 +78,9 @@ for DBSNP_file in os.listdir(dbsnp_path):
         df_transcript.at[index, 'mutations'] = ', '.join([str(match.data) for match in matches])
 
 
+
     # Save the merged dataframe for this chromosome to a new csv file
-    df_chr.to_csv(f'{output_path}/merged_{chr_name}.csv', index=False)
+    df_transcript.loc[df_transcript['chromosome_name'] == chr_name].to_csv(f'{output_path}/merged_{chr_name}.csv', index=False)
 
 
 
