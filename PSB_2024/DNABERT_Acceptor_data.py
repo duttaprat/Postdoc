@@ -8,10 +8,10 @@ from Bio import SeqIO
 
 # In[2]:
 
-
-chr_wise_files = glob.glob('/data/private/pdutta/PSB_Data/Acceptor/Chrwise/*.tsv')
+chromosomes = [str(i) for i in range(1, 23)] + ['X', 'Y']
+chr_wise_files = glob.glob('/data/private/pdutta/PSB_Data_2024/Acceptor/Chrwise/*.tsv')
 reference_path  = "/data/projects/Resources/HumanReferenceGenome/"
-output_path = "/data/private/pdutta/PSB_Data/Acceptor/DNABERT_data/" 
+output_path = "/data/projects/PSB/DNABERT_data/Acceptor/" 
 
 
 # In[3]:
@@ -89,18 +89,25 @@ def get_sequences(df, genome):
     
     # Convert the list of dictionaries to a DataFrame
     new_df = pd.DataFrame(data)
+    print(new_df.shape)
+    new_df = new_df.drop_duplicates().reset_index()
+    print(new_df.shape)
+    groupby_columns = [col for col in new_df.columns if col != 'Ensemble_Transcript_ID']
+    new_df = new_df.groupby(groupby_columns)['Ensemble_Transcript_ID'].apply(','.join).reset_index()
+    print(new_df.shape)
     data = []
     merged_list = list(zip(new_df['reference_seq'], new_df['alt_seq']))
-    merged_list = [item for tup in merged_list for item in tup]
+    merged_list = [item.upper() for tup in merged_list for item in tup]
     #print(merged_list)
     kmer_lst = list(map(seq2kmer, merged_list))
     df_kmer = pd.DataFrame(kmer_lst, columns=['Sequence'])
-    values = [0] * (len(df_kmer) // 2) + [1] * (len(df_kmer) // 2)
+    
+#     values = [0] * (len(df_kmer) // 2) + [1] * (len(df_kmer) // 2)
 
-    # If the DataFrame has an odd number of rows, add one more 0 or 1 to make the length match
-    if len(df_kmer) % 2:
-        values += [np.random.choice([0, 1])]
-    df_kmer['Label'] = values
+#     # If the DataFrame has an odd number of rows, add one more 0 or 1 to make the length match
+#     if len(df_kmer) % 2:
+#         values += [np.random.choice([0, 1])]
+    df_kmer['Label'] = np.random.choice([0, 1], size=len(df_kmer))
     
     print(new_df.head())
     print("&*")
@@ -110,13 +117,13 @@ def get_sequences(df, genome):
 
 
 
-for intersect_file in chr_wise_files:
+for chromosome in chromosomes:
     # Read the csv file into a DataFrame
-    chromosome_name = intersect_file.split('_')[-2]
+    chromosome_name = 'chr'+str(chromosome)
     if (chromosome_name != 'chrM'):
         print(chromosome_name)
         genome = SeqIO.to_dict(SeqIO.parse(reference_path+chromosome_name+".fa", "fasta"))
-        df = pd.read_csv(intersect_file, header=None, sep= '\t')
+        df = pd.read_csv('/data/private/pdutta/PSB_Data_2024/Acceptor/Chrwise/intersected_DBSNP_transcript_'+chromosome_name+'_data.tsv', header=None, sep= '\t')
         print(df.shape)
         #df= df[df[15]==2]
         #df = df.head(15)
@@ -126,7 +133,7 @@ for intersect_file in chr_wise_files:
         out_folder_path = output_path+chromosome_name
         if not os.path.exists(out_folder_path):
             os.makedirs(out_folder_path)
-        new_df.to_csv(out_folder_path + "/all_data.tsv", sep="\t", index= False)
+        new_df.to_csv(out_folder_path + "/all_data_new.tsv", sep="\t", index= False)
         df_kmer.to_csv(out_folder_path + "/dev.tsv", sep="\t", index= False)
         print("All the files of ", chromosome_name, "are saved !!!\n ")
 
