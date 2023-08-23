@@ -8,10 +8,10 @@ from Bio import SeqIO
 
 # In[2]:
 
-
-chr_wise_files = glob.glob('/data/private/pdutta/PSB_Data/Donor/Chrwisee/*.tsv')
+chromosomes = [str(i) for i in range(1, 23)] + ['X', 'Y']
+chr_wise_files = glob.glob('/data/private/pdutta/PSB_Data_2024/CorePromoter/Chrwise/Chrwise/*.tsv')
 reference_path  = "/data/projects/Resources/HumanReferenceGenome/"
-output_path = "/data/private/pdutta/PSB_Data/Acceptor/DNABERT_data/" 
+output_path = "/data/projects/PSB/DNABERT_data/CoreProm/" 
 
 
 # In[3]:
@@ -72,7 +72,7 @@ def get_sequences(df, genome):
             data.append({
                 'chr': row[0],
                 'strand': row[4],
-                'Acceptor_coordinates': str(row[1])+'-'+str(row[2]),
+                'Donor_coordinates': str(row[1])+'-'+str(row[2]),
                 'Ensemble_Transcript_ID': row[8],
                 'Transcript_coordinates': str(row[6])+'-'+str(row[7]),
                 'dbsnp_id': row[13],
@@ -95,12 +95,12 @@ def get_sequences(df, genome):
     #print(merged_list)
     kmer_lst = list(map(seq2kmer, merged_list))
     df_kmer = pd.DataFrame(kmer_lst, columns=['Sequence'])
-    values = [0] * (len(df_kmer) // 2) + [1] * (len(df_kmer) // 2)
+#     values = [0] * (len(df_kmer) // 2) + [1] * (len(df_kmer) // 2)
 
-    # If the DataFrame has an odd number of rows, add one more 0 or 1 to make the length match
-    if len(df_kmer) % 2:
-        values += [np.random.choice([0, 1])]
-    df_kmer['Label'] = values
+#     # If the DataFrame has an odd number of rows, add one more 0 or 1 to make the length match
+#     if len(df_kmer) % 2:
+#         values += [np.random.choice([0, 1])]
+    df_kmer['Label'] = np.random.choice([0, 1], size=len(df_kmer))
     
     print(new_df.head())
     print("&*")
@@ -110,13 +110,13 @@ def get_sequences(df, genome):
 
 
 
-for intersect_file in chr_wise_files:
+for chromosome in chromosomes:
     # Read the csv file into a DataFrame
-    chromosome_name = intersect_file.split('_')[-2]
+    chromosome_name = 'chr'+str(chromosome)
     if (chromosome_name != 'chrM'):
         print(chromosome_name)
         genome = SeqIO.to_dict(SeqIO.parse(reference_path+chromosome_name+".fa", "fasta"))
-        df = pd.read_csv(intersect_file, header=None, sep= '\t')
+        df = pd.read_csv('/data/private/pdutta/PSB_Data_2024/CorePromoter/Chrwise/intersected_DBSNP_transcript_'+chromosome_name+'_data.tsv', header=None, sep= '\t')
         print(df.shape)
         #df= df[df[15]==2]
         #df = df.head(15)
