@@ -2,7 +2,7 @@
 
 function process_bam {
     bam_file="$1"
-    reference_genome="/data/projects/Resources/Gencode_genome_annotation/GRCh38.primary_assembly.genome.fa"
+    reference_genome="//home/pdutta/Data/Human_Genome_Data/GRCh38_latest_genomic.fna"
 
     if [ -f "$bam_file" ]; then
         echo "Processing $bam_file"

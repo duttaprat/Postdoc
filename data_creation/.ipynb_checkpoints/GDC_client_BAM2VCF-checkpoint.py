@@ -5,11 +5,12 @@ from concurrent.futures import ProcessPoolExecutor
 # Set the paths to your manifest and token files
 MANIFEST_PATH = '/home/pdutta/Data/GDC/RAMANA/Manifest/bam_manifest.txt'
 TOKEN_PATH = '/home/pdutta/Data/GDC/RAMANA/Token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
-DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data/BAM/'  # Adjust as needed
-VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data/VCF/'
+DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data_new/BAM/'  # Adjust as needed
+VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data_new/VCF/'
 
 def download_and_process_bam(file_id):
     # Download the BAM file using gdc-client
+    print(file_id)
 
     cmd_download = [
         'gdc-client',
@@ -62,6 +63,5 @@ if __name__ == "__main__":
         lines = f.readlines()[1:]  # Skip the header
         file_ids = [line.split('\t')[0] for line in lines]
     
-    # Use ProcessPoolExecutor to download and process BAM files in parallel
-    with ProcessPoolExecutor() as executor:
-        executor.map(download_and_process_bam, file_ids)
+    for file_id in file_ids:
+        download_and_process_bam(file_id)

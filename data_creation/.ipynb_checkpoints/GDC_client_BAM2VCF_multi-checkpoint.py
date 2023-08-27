@@ -3,14 +3,14 @@ import subprocess
 from concurrent.futures import ProcessPoolExecutor
 
 # Set the paths to your manifest and token files
-MANIFEST_PATH = '/data/projects/BAM_files/manifest_files/bam_manifest.txt'
-TOKEN_PATH = '/data/projects/BAM_files/token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
-DOWNLOAD_DIR = '/data/projects/BAM_files/data_multiple/'  # Adjust as needed
+MANIFEST_PATH = '/home/pdutta/Data/GDC/RAMANA/Manifest/bam_manifest.txt'
+TOKEN_PATH = '/home/pdutta/Data/GDC/RAMANA/Token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
+DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data/BAM/'  # Adjust as needed
+VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data/VCF/'
 
 def download_and_process_bam(file_id):
     # Download the BAM file using gdc-client
-    bam_file_path = os.path.join(DOWNLOAD_DIR, f"{file_id}.bam")
-    print(bam_file_path)
+
     cmd_download = [
         'gdc-client',
         'download',
@@ -21,17 +21,40 @@ def download_and_process_bam(file_id):
     ]
     subprocess.call(cmd_download)
     
-    # Convert BAM to VCF using samtools and bcftools
-    vcf_file_path = bam_file_path.replace('.bam', '.vcf')
-    print(vcf_file_path)
-    cmd_bam_to_vcf = [
-        'samtools', 'mpileup', '-uf', 'path_to_reference_genome.fasta',
-        bam_file_path, '|', 'bcftools', 'call', '-mv', '>', vcf_file_path
-    ]
-    subprocess.call(' '.join(cmd_bam_to_vcf), shell=True)
+    bam_file_path = None
+    for root, dirs, files in os.walk(os.path.join(DOWNLOAD_DIR, file_id)):
+        for file in files:
+            if file.endswith('.bam'):
+                bam_file_path = os.path.join(root, file)
+                break
     
-    # Remove the BAM file
-    os.remove(bam_file_path)
+    if bam_file_path:
+        # Convert BAM to VCF
+        vcf_filename = os.path.basename(bam_file_path).replace('.bam', '.vcf')
+        vcf_file_path = os.path.join(VCF_DIR, vcf_filename)
+        print(bam_file_path, vcf_file_path)
+
+        # Convert BAM to VCF using samtools and bcftools
+        cmd_bam_to_vcf = [
+            'bcftools', 'mpileup', '-f', '/home/pdutta/Rekha_LabWork/Collaborator_work/RNA-seq/RNAseq_CommonFiles/STAR/Genome/GRCh38.primary_assembly.genome.fa',
+            bam_file_path, '|', 'bcftools', 'call', '-mv', '>', vcf_file_path
+        ]
+        subprocess.call(' '.join(cmd_bam_to_vcf), shell=True)
+        
+        # Optional: Remove the downloaded folder to save space
+        #shutil.rmtree(os.path.join(DOWNLOAD_DIR, file_id))
+        os.remove(bam_file_path)
+    else:
+        print(f"No BAM file found for {file_id}")
+    
+    
+    # cmd_bam_to_vcf = (
+    # 'samtools mpileup -uf /home/pdutta/Data/Human_Genome_Data/GRCh38_latest_genomic.fna ' + bam_file_path +
+    # ' | bcftools call -mv > ' + vcf_file_path
+    # )
+    # subprocess.call(cmd_bam_to_vcf, shell=True)
+
+    
 
 if __name__ == "__main__":
     # Read the manifest file to get a list of file IDs
