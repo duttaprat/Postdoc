@@ -2,21 +2,23 @@ import os
 import subprocess
 from concurrent.futures import ProcessPoolExecutor
 import time
-import argparse, sys
+import argparse, sys, logging
+
+logging.basicConfig(level=logging.INFO)
 
 manifest_file_name = sys.argv[1]
-
 # Set the paths to your manifest and token files
-MANIFEST_PATH = '/home/pdutta/Data/GDC/RAMANA/Manifest/'+ manifest_file_name
-TOKEN_PATH = '/home/pdutta/Data/GDC/RAMANA/Token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
-DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data/BAM_multi/'  # Adjust as needed
-VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data/VCF_multi/'
+MANIFEST_PATH = '/data/projects/BAM_files/manifest_files/'+ manifest_file_name
+TOKEN_PATH = '/data/projects/BAM_files/token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
+DOWNLOAD_DIR = '/data/projects/BAM_files/data/BAM_multi/'  # Adjust as needed
+VCF_DIR = '/data/projects/BAM_files/data/VCF_multi/'
 
 
 
 CHROMOSOMES = [f"chr{i}" for i in range(1, 23)] + ['chrX', 'chrY']
 
 def bam_to_vcf_chrom(bam_file_path, chrom):
+    logging.info(f"Started processing for {chrom}")
     vcf_filename = os.path.basename(bam_file_path).replace('.bam', f'_{chrom}.vcf.gz')  # Appending chromosome to the filename
     print(vcf_filename , "is generating !!!")
     vcf_file_path = os.path.join(VCF_DIR, vcf_filename)
@@ -30,7 +32,21 @@ def bam_to_vcf_chrom(bam_file_path, chrom):
     mpileup.stdout.close()
     call.communicate()
     print(vcf_filename , "is generated !!!")
+    logging.info(f"Finished processing for {chrom}")
 
+def wrapper_function(chrom, bam_file_path):
+    try:
+        logging.info(f"Wrapper function called for {chrom}")
+        bam_to_vcf_chrom(bam_file_path, chrom)
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")
+    
+
+    
+def process_chromosome(chrom, bam_file_path):
+    wrapper_function(chrom, bam_file_path)
+    
+    
 def concat_vcf_files(bam_file_path):
     base_name = os.path.basename(bam_file_path).replace('.bam', '')
     vcf_files = [os.path.join(VCF_DIR, f"{base_name}_{chrom}.vcf.gz") for chrom in CHROMOSOMES]
@@ -66,8 +82,16 @@ def download_and_process_bam(file_id):
     if bam_file_path:
         print(bam_file_path, "downloaded..!!!")
         # Process each chromosome in parallel
-        with ProcessPoolExecutor(max_workers=24) as executor:
-            executor.map(lambda chrom: bam_to_vcf_chrom(bam_file_path, chrom), CHROMOSOMES)
+        try:
+            with ProcessPoolExecutor(max_workers=10) as executor:
+                logging.info("Starting processing.")
+                executor.map(process_chromosome, CHROMOSOMES, [bam_file_path]*len(CHROMOSOMES))
+                logging.info("Finished processing.")
+        except Exception as e:
+            logging.error(f"An error occurred: {e}")
+
+        # with ProcessPoolExecutor(max_workers=24) as executor:
+        #     executor.map(lambda chrom: bam_to_vcf_chrom(bam_file_path, chrom), CHROMOSOMES)
         
         # After processing all chromosomes, merge VCFs into one
         concat_vcf_files(bam_file_path)
@@ -106,9 +130,6 @@ def download_and_process_bam(file_id):
     # )
     # subprocess.call(cmd_bam_to_vcf, shell=True)
 
-
-MAX_RETRIES = 5
-RETRY_WAIT_SECONDS = 10
 
 
     
