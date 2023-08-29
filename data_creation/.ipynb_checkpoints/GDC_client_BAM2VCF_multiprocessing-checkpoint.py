@@ -2,15 +2,16 @@ import os
 import subprocess
 from concurrent.futures import ProcessPoolExecutor
 import time
+import argparse, sys
 
-MAX_RETRIES = 5
-RETRY_WAIT_SECONDS = 60
+manifest_file_name = sys.argv[1]
 
 # Set the paths to your manifest and token files
-MANIFEST_PATH = '/data/projects/BAM_files/manifest_files/bam_manifest_partial.txt'
-TOKEN_PATH = '/data/projects/BAM_files/token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
-DOWNLOAD_DIR = '/data/projects/BAM_files/data/BAM_multi/'  # Adjust as needed
-VCF_DIR = '/data/projects/BAM_files/data/VCF_multi/'
+MANIFEST_PATH = '/home/pdutta/Data/GDC/RAMANA/Manifest/'+ manifest_file_name
+TOKEN_PATH = '/home/pdutta/Data/GDC/RAMANA/Token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
+DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data/BAM_multi/'  # Adjust as needed
+VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data/VCF_multi/'
+
 
 
 CHROMOSOMES = [f"chr{i}" for i in range(1, 23)] + ['chrX', 'chrY']

@@ -66,7 +66,7 @@ def download_and_process_bam(file_id):
     if bam_file_path:
         print(bam_file_path, "downloaded..!!!")
         # Process each chromosome in parallel
-        with ProcessPoolExecutor(max_workers=int(os.cpu_count()/2)+10) as executor:
+        with ProcessPoolExecutor(max_workers=24) as executor:
             executor.map(lambda chrom: bam_to_vcf_chrom(bam_file_path, chrom), CHROMOSOMES)
         
         # After processing all chromosomes, merge VCFs into one
@@ -110,14 +110,7 @@ def download_and_process_bam(file_id):
 MAX_RETRIES = 5
 RETRY_WAIT_SECONDS = 10
 
-def download_with_retry(file_id):
-    for attempt in range(MAX_RETRIES):
-        try:
-            download_and_process_bam(file_id)
-            return  # Exit the function if successful
-        except Exception as e:
-            print(f"Error on attempt {attempt + 1} for file {file_id}: {e}")
-            time.sleep(RETRY_WAIT_SECONDS)
+
     
 
 if __name__ == "__main__":
@@ -133,8 +126,8 @@ if __name__ == "__main__":
         lines = f.readlines()[1:]  # Skip the header
         file_ids = [line.split('\t')[0] for line in lines]
     
-    # Use ProcessPoolExecutor to download and process BAM files in parallel
-    num_workers =int(os.cpu_count() /2) +10
-    print("Number of process parrallely working ", num_workers)
-    with ProcessPoolExecutor(max_workers=num_workers) as executor:
-        executor.map(download_with_retry, file_ids)
+    # Download the BAM files sequentially and convert in parallel
+    # num_workers =int(os.cpu_count() /2) +10
+    # print("Number of process parrallely working ", num_workers)
+    for file_id in file_ids:
+        download_and_process_bam(file_id)
