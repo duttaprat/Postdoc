@@ -3,19 +3,17 @@ import subprocess
 from concurrent.futures import ProcessPoolExecutor
 
 # Set the paths to your manifest and token files
-MANIFEST_PATH = '/home/pdutta/Data/GDC/RAMANA/Manifest/bam_manifest.txt'
-TOKEN_PATH = '/home/pdutta/Data/GDC/RAMANA/Token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
-DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data_new/BAM/'  # Adjust as needed
-VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data_new/VCF/'
+MANIFEST_PATH = '/data/projects/BAM_files/manifest_files/bam_manifest.txt'
+TOKEN_PATH = '/data/projects/BAM_files/token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
+DOWNLOAD_DIR = '/data/projects/BAM_files/data/BAM/'  # Adjust as needed
+VCF_DIR = '/data/projects/BAM_files/data/VCF/'
 
 def download_and_process_bam(file_id):
     # Download the BAM file using gdc-client
     print(file_id)
-
     cmd_download = [
         'gdc-client',
         'download',
-        '-m', MANIFEST_PATH,
         '-t', TOKEN_PATH,
         '-d', DOWNLOAD_DIR,
         file_id
@@ -37,7 +35,7 @@ def download_and_process_bam(file_id):
 
         # Convert BAM to VCF using samtools and bcftools
         cmd_bam_to_vcf = [
-            'bcftools', 'mpileup', '-f', '/home/pdutta/Rekha_LabWork/Collaborator_work/RNA-seq/RNAseq_CommonFiles/STAR/Genome/GRCh38.primary_assembly.genome.fa',
+            'bcftools', 'mpileup', '-f', '/data/projects/Resources/Gencode_genome_annotation/GRCh38.primary_assembly.genome.fa',
             bam_file_path, '|', 'bcftools', 'call', '-mv', '>', vcf_file_path
         ]
         subprocess.call(' '.join(cmd_bam_to_vcf), shell=True)

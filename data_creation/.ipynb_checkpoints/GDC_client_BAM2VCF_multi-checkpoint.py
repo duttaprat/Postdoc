@@ -63,5 +63,5 @@ if __name__ == "__main__":
         file_ids = [line.split('\t')[0] for line in lines]
     
     # Use ProcessPoolExecutor to download and process BAM files in parallel
-    with ProcessPoolExecutor() as executor:
+    with ProcessPoolExecutor(max_workers=num_workers) as executor:
         executor.map(download_and_process_bam, file_ids)
