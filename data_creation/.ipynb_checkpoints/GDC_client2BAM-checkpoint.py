@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO)
 # Set the paths to your manifest and token files
 TOKEN_PATH =  sys.argv[1]
 MANIFEST_PATH = sys.argv[2]
-DOWNLOAD_DIR =  sys.argv[3]  # Adjust as needed
+DOWNLOAD_DIR =  '/data/projects/GDC_Cancer_Wise/'+sys.argv[3]+'/Data/BAM_NEED_TO_BE_PROCESSED/'  # Adjust as needed
 
 
 
