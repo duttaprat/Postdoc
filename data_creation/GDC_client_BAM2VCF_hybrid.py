@@ -10,10 +10,11 @@ path_to_reference_genome = sys.argv[1]
 manifest_file_name = sys.argv[2]
 
 # Set the paths to your manifest and token files
-MANIFEST_PATH = '/home/pdutta/Data/GDC/RAMANA/Manifest/'+ manifest_file_name
-TOKEN_PATH = '/home/pdutta/Data/GDC/RAMANA/Token/gdc-user-token.2023-08-18T17_34_29.807Z.txt'
-DOWNLOAD_DIR = '/home/pdutta/Data/GDC/RAMANA/data/BAM_multi/'  # Adjust as needed
-VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data/VCF_multi/'
+TOKEN_PATH = sys.argv[1]
+MANIFEST_PATH = sys.argv[3]
+DOWNLOAD_DIR = '/data/projects/GDC_Cancer_Wise/'+sys.argv[4]+'/Data/BAM_multi/'  # Adjust as needed
+VCF_DIR = '/data/projects/GDC_Cancer_Wise/'+sys.argv[4]+'/Data/VCF_multi/'
+
 
 
 
@@ -26,7 +27,7 @@ def bam_to_vcf_chrom(bam_file_path, chrom):
     vcf_file_path = os.path.join(VCF_DIR, vcf_filename)
 
     # Convert BAM to VCF using bcftools with subprocess.Popen for the specific chromosome
-    cmd_mpileup = ['bcftools', 'mpileup', '-r', chrom, '-f', path_to_reference_genome , bam_file_path]
+    cmd_mpileup = ['bcftools', 'mpileup', '-r', chrom, '-f', sys.argv[2], bam_file_path]
     cmd_call = ['bcftools', 'call', '-mv', '-Oz', '-o', vcf_file_path]
     
     mpileup = subprocess.Popen(cmd_mpileup, stdout=subprocess.PIPE)
@@ -74,6 +75,7 @@ def download_and_process_bam(file_id):
         file_id
     ]
     subprocess.call(cmd_download)
+    
     
     bam_file_path = None
     for root, dirs, files in os.walk(os.path.join(DOWNLOAD_DIR, file_id)):
@@ -142,7 +144,8 @@ if __name__ == "__main__":
     if not os.path.exists(VCF_DIR):
         os.makedirs(VCF_DIR)
         
-    
+    # print(MANIFEST_PATH, TOKEN_PATH)
+    # input()
     
     # Read the manifest file to get a list of file IDs
     with open(MANIFEST_PATH, 'r') as f:
