@@ -5,9 +5,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-
-parent_dir = "/home/pdutta/Data/GDC/RAMANA/data/BAM_multi/"
-VCF_DIR = '/home/pdutta/Data/GDC/RAMANA/data/VCF_multi/'
+bam_file_path = '/data/projects/BAM_files/data/BAM_multi/aec445a9-8a70-4312-a535-e4224b4bf041/07c3103c-94ed-4fee-968d-318721aa84a9_wgs_gdc_realn.bam'  # Adjust as needed
+VCF_DIR = '/data/projects/BAM_files/data/VCF_multi/'
 
 CHROMOSOMES = [f"chr{i}" for i in range(1, 23)] + ['chrX', 'chrY']  # Your list of chromosomes
 
@@ -15,7 +14,7 @@ def bam_to_vcf_chrom(bam_file_path, chrom):
     vcf_filename = os.path.basename(bam_file_path).replace('.bam', f'_{chrom}.vcf.gz')
     vcf_file_path = os.path.join(VCF_DIR, vcf_filename)
 
-    cmd_mpileup = ['bcftools', 'mpileup', '-r', chrom, '-f', '/home/pdutta/Rekha_LabWork/Collaborator_work/RNA-seq/RNAseq_CommonFiles/STAR/Genome/GRCh38.primary_assembly.genome.fa', bam_file_path]
+    cmd_mpileup = ['bcftools', 'mpileup', '-r', chrom, '-f', '/data/projects/Resources/Gencode_genome_annotation/GRCh38.primary_assembly.genome.fa', bam_file_path]
     cmd_call = ['bcftools', 'call', '-mv', '-Oz', '-o', vcf_file_path]
     
     mpileup = subprocess.Popen(cmd_mpileup, stdout=subprocess.PIPE)
@@ -42,25 +41,24 @@ def wrapper_function(chrom):
     bam_to_vcf_chrom(bam_file_path, chrom)
 
 if __name__ == "__main__":
-    # if not os.path.exists(VCF_DIR):
-    #     os.makedirs(VCF_DIR)
+    if not os.path.exists(VCF_DIR):
+        os.makedirs(VCF_DIR)
     
-    for root, dirs, files in os.walk(parent_dir):
-        for file in files:
-            if file.endswith(".bam"):
-                bam_file_path = os.path.join(root, file)
-                print(bam_file_path)
-#                 try:
-#                     with ProcessPoolExecutor(max_workers=24) as executor:
-#                         logging.info("Starting processing.")
-#                         executor.map(wrapper_function, CHROMOSOMES)
-#                         logging.info("Finished processing.")
-#                 except Exception as e:
-#                     logging.error(f"An error occurred: {e}")
+    try:
+        with ProcessPoolExecutor(max_workers=24) as executor:
+            logging.info("Starting processing.")
+            executor.map(wrapper_function, CHROMOSOMES)
+            logging.info("Finished processing.")
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")
 
 
-#                 concat_vcf_files(bam_file_path)
-#                 os.remove(bam_file_path)
+
+
+
+concat_vcf_files(bam_file_path)
+
+os.remove(bam_file_path)
 
     
     
