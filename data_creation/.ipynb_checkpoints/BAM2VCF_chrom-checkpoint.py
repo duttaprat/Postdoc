@@ -54,17 +54,13 @@ def wrapper_function(chrom, bam_file_path):
 if __name__ == "__main__":
     # if not os.path.exists(VCF_DIR):
     #     os.makedirs(VCF_DIR)
+    
     for root, dirs, files in os.walk(parent_dir):
         for file in files:
             if file.endswith(".bam"):
                 bam_file_path = os.path.join(root, file)
                 print(bam_file_path)
-    input()
-    for root, dirs, files in os.walk(parent_dir):
-        for file in files:
-            if file.endswith(".bam"):
-                bam_file_path = os.path.join(root, file)
-                print(bam_file_path)
+                input()
                 try:
                     with ProcessPoolExecutor(max_workers=24) as executor:
                         logging.info("Starting processing.")
