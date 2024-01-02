@@ -118,6 +118,7 @@ print("****All the VCF files are loaded***")
 ## Load the reference file
 reference_fasta = pysam.FastaFile(reference_path)
 print("#####The reference file is loaded######")
+
 # In[3]:
 
 dnabert_raw_data = {}
@@ -138,7 +139,3 @@ for key, value in loaded_dictionary.items():
 
 with open(raw_output_path+"/raw_acceptor_vcf_data.pkl", "wb") as file:
     pickle.dump(dnabert_raw_data, file)
-
-
-
-

@@ -138,7 +138,3 @@ for key, value in loaded_dictionary.items():
 
 with open(raw_output_path+"/raw_acceptor_vcf_data.pkl", "wb") as file:
     pickle.dump(dnabert_raw_data, file)
-
-
-
-
